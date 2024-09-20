@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import Image from "next/image";
 import { useState, useCallback, useEffect } from "react";
 
 interface Post {
@@ -27,7 +28,7 @@ function CardCarousel() {
     useEffect(() => {
       axios
         .get(
-          "https://www.olivas.digital/wp-json/wp/v2/posts?categories=373&per_page=9&_embed"
+          "https://www.olivas.digital/wp-json/wp/v2/posts?categories=373&per_page=1&_embed"
         )
         .then((response) => {
           setItems(response.data);
@@ -52,11 +53,14 @@ function CardCarousel() {
                     {item.title.rendered}
                   </p>
                   {item._embedded?.["wp:featuredmedia"] && (
-                    <img
+                    <Image
                       src={item._embedded["wp:featuredmedia"][0].source_url}
                       alt={item.title.rendered}
                       className="h-full object-cover"
-                    />
+                      width="180"
+                      height="180"
+                      quality="100"
+                    ></Image>
                   )}
                   <p
                     dangerouslySetInnerHTML={{
