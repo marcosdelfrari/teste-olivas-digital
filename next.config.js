@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.olivas.digital"], // Adiciona o domínio da imagem
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.olivas.digital",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

@@ -1,15 +1,15 @@
-import logo from "./logo.png";
-import headerImg from "./headerImg.png";
-import seoImg from "./seoImg.png";
-import perfoImg from "./perfoImg.png";
-import velocidadeIcon from "./velocidade.svg";
-import otimizacaoIcon from "./otimizacao.svg";
-import seoIcon from "./seoIcon.svg";
+const logo = "/logo.png";
+const headerImg = "/headerImg.png";
+const seoImg = "/seoImg.png";
+const perfoImg = "/perfoImg.png";
+const velocidadeIcon = "/velocidade.svg";
+const otimizacaoIcon = "/otimizacao.svg";
+const seoIcon = "/seoIcon.svg";
 
-export const identidade = {
+export const id = {
   logo: logo,
   corPrimary: "#C6B92D",
-  corSecundary: "#841E7F",
+  corSecondary: "#841E7F",
 };
 
 export const links = [
