@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="relative px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden">
+    <header className="relative pt-16 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden">
       {" "}
       {/* Adicione overflow-hidden aqui */}
       <div className="w-3/4 z-10">

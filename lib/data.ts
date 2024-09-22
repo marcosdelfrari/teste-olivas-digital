@@ -12,6 +12,9 @@ const leadsIcon = "/leads.svg";
 const oportunidadesIcon = "/oportunidades.svg";
 const vendasIcon = "/carrinho.svg";
 const tempoIcon = "/tempo.svg";
+const FacebookIcon = "/facebook.svg";
+const InstagramIcon = "/instagram.svg";
+const LinkedinIcon = "/linkedin.svg";
 
 export const id = {
   logo: logo,
@@ -96,9 +99,20 @@ export const contato = {
 export const footer = {
   info: "A Olivas Digital é uma martech (marketing technology company), que há mais de 10 anos ajuda empresas de todos os portes e segmentos a impulsionarem suas vendas no digital.",
   tel: "(11) 2391-6090",
-  social: [
+  socials: [
     {
-      icon: "",
+      name: "Facebook",
+      icon: FacebookIcon,
+      link: "https://www.instagram.com/olivasdigital",
+    },
+    {
+      name: "Instagram",
+      icon: InstagramIcon,
+      link: "https://www.instagram.com/olivasdigital",
+    },
+    {
+      name: "Linkedin",
+      icon: LinkedinIcon,
       link: "https://www.instagram.com/olivasdigital",
     },
   ],
