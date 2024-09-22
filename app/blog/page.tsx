@@ -5,7 +5,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import useFetchPosts from "../../hooks/useFetchPosts";
 import PostCard from "@/components/PostCard"; // Importa o novo componente
-
+import Loading from "@/components/Loading";
 function BlogPage() {
   const searchParams = useSearchParams();
   const keyword = searchParams.get("keyword") || ""; // Palavra-chave
@@ -19,18 +19,22 @@ function BlogPage() {
       {keyword && <h2>Palavra-chave: "{keyword}"</h2>}
       {categoryId > 0 && <h2>ID da Categoria: {categoryId}</h2>}
 
-      {loading && <p>Carregando...</p>}
+      {loading && (
+        <div>
+          <Loading />
+        </div>
+      )}
       {error && <p>{error}</p>}
 
-      <div>
+      <div className="flex flex-wrap">
         {posts.map((post) => (
-          <PostCard
-            key={post.id}
-            title={post.title.rendered}
-            imageUrl={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
-            excerpt={post.excerpt.rendered}
-            link={post.link}
-          />
+          <div key={post.id} className="w-1/2 sm:w-1/3 lg:w-1/4 ">
+            <PostCard
+              title={post.title.rendered}
+              imageUrl={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
+              link={post.link}
+            />
+          </div>
         ))}
       </div>
     </div>

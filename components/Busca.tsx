@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { IoIosSearch } from "react-icons/io";
 
 interface BuscaProps {
   onSearch: (query: string, type: string) => void; // Aceita dois parâmetros
@@ -12,25 +13,24 @@ const Busca: React.FC<BuscaProps> = ({ onSearch }) => {
   const [searchType, setSearchType] = useState<string>("keyword");
 
   const handleSearch = () => {
-    onSearch(query, searchType); // Passa a consulta e o tipo de busca
+    onSearch(query, searchType);
   };
 
   return (
-    <div>
-      <select
-        value={searchType}
-        onChange={(e) => setSearchType(e.target.value)}
-      >
-        <option value="keyword">Buscar por palavra-chave</option>
-        <option value="category">Buscar por categoria</option>
-      </select>
+    <div className="flex items-center relative">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Digite sua busca"
+        className="border h-[40px] border-primary outline-none focus-visible:border-secondary sm:max-w-40 text-sm px-2 py-1 rounded-full w-full"
       />
-      <button onClick={handleSearch}>Buscar</button>
+      <button
+        className="absolute right-3 hover:font-secondary"
+        onClick={handleSearch}
+      >
+        <IoIosSearch className="cursor-pointer " />
+      </button>
     </div>
   );
 };

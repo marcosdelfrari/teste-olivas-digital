@@ -1,4 +1,3 @@
-// hooks/useFetchPosts.ts
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -28,7 +27,6 @@ function useFetchPosts(query: string | number, perPage: number = 99) {
     setLoading(true);
     let url = `https://www.olivas.digital/wp-json/wp/v2/posts?per_page=${perPage}&_embed`;
 
-    // Verifica se a consulta é um número (ID da categoria) ou uma string (palavra-chave)
     if (typeof query === "number" && query > 0) {
       url += `&categories=${query}`;
     } else if (typeof query === "string" && query) {
