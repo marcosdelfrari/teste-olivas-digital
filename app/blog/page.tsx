@@ -20,10 +20,9 @@ function BlogPage() {
       </h1>
       {keyword && (
         <h2>
-          Palavra-chave: <span className="text-primary">"{keyword}"</span>
+          Palavra-chave: <span className="text-primary">{keyword}</span>
         </h2>
       )}
-      {categoryId > 0 && <h2>ID da Categoria: {categoryId}</h2>}
 
       {loading && (
         <div>
