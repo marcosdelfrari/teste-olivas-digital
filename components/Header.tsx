@@ -6,7 +6,7 @@ function Header() {
   return (
     <header
       id="sobre"
-      className="relative pt-44 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden"
+      className="relative pt-44 sm:pt-0 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden"
     >
       <div className="w-3/4 z-10">
         <h1

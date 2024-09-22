@@ -1,5 +1,5 @@
 const logo = "/logo.png";
-const headerImg = "/headerImg.png";
+const headerImg = "/headerimg.png";
 const seoImg = "/seoImg.png";
 const perfoImg = "/perfoImg.png";
 const velocidadeIcon = "/velocidade.svg";

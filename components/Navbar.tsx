@@ -13,7 +13,7 @@ function Navbar() {
     itemsPerGroup === 1 ? 190 : itemsPerGroup === 2 ? 200 : 270;
 
   return (
-    <div className="z-20 fixed bg-white w-full sm:relative text-primary">
+    <nav className="z-20 fixed bg-white w-full sm:relative text-primary">
       <div className="flex px-5 2xl:p-0 h-[106px] justify-between items-center">
         <div>
           <a href="/">
@@ -27,7 +27,7 @@ function Navbar() {
         </div>
         <Menu />
       </div>
-    </div>
+    </nav>
   );
 }
 

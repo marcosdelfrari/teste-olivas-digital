@@ -48,16 +48,13 @@ export default function RootLayout({
           content="Código de verificação do Google"
         />
       </Head>
+      <Navbar />
       <body className={`${firaSans.className} max-w-[1254px] mx-auto`}>
-        <nav>
-          <Navbar />
-        </nav>
         {children}
-        <footer>
-          <Footer />
-        </footer>
+
         <WhatsappFloat />
       </body>
+      <Footer />
     </html>
   );
 }
