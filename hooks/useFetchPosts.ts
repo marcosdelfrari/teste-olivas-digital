@@ -24,25 +24,32 @@ function useFetchPosts(query: string | number, perPage: number = 99) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
-    let url = `https://www.olivas.digital/wp-json/wp/v2/posts?per_page=${perPage}&_embed`;
+    const fetchData = async () => {
+      setLoading(true);
+      let url = `https://www.olivas.digital/wp-json/wp/v2/posts?per_page=${perPage}&_embed`;
 
-    if (typeof query === "number" && query > 0) {
-      url += `&categories=${query}`;
-    } else if (typeof query === "string" && query) {
-      url += `&search=${encodeURIComponent(query)}`;
-    }
+      if (typeof query === "number" && query > 0) {
+        url += `&categories=${query}`;
+      } else if (typeof query === "string" && query) {
+        url += `&search=${encodeURIComponent(query)}`;
+      }
 
-    axios
-      .get(url)
-      .then((response) => {
-        setPosts(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
+      try {
+        const response = await axios.get(url);
+        if (Array.isArray(response.data)) {
+          setPosts(response.data);
+        } else {
+          setError("Formato de dados inesperado");
+        }
+      } catch (err) {
+        console.error("API error:", err); // Log do erro completo
         setError("Erro ao obter dados da API");
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, [query, perPage]);
 
   return { posts, loading, error };
