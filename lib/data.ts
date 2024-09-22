@@ -88,8 +88,18 @@ export const performance = {
 };
 
 export const contato = {
-  title: "",
-  subtitle: "",
-  description: "",
-  checkbox: "",
+  title: `Entre em contato e <span class="text-primary">receba atendimento</span>`,
+  description:
+    "Por favor, preencha o formulário abaixo com suas informações e a sua mensagem. Nossa equipe entrará em contato com você o mais breve possível.",
+};
+
+export const footer = {
+  info: "A Olivas Digital é uma martech (marketing technology company), que há mais de 10 anos ajuda empresas de todos os portes e segmentos a impulsionarem suas vendas no digital.",
+  tel: "(11) 2391-6090",
+  social: [
+    {
+      icon: "",
+      link: "https://www.instagram.com/olivasdigital",
+    },
+  ],
 };

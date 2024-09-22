@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.scss";
 import { Fira_Sans } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const firaSans = Fira_Sans({
   subsets: ["latin"],
@@ -24,6 +25,9 @@ export default function RootLayout({
           <Navbar />
         </header>
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
