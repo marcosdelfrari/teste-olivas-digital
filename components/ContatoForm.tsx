@@ -11,7 +11,7 @@ export default function ContactForm() {
   const { formData, errors, handleChange, handleSubmit } = useContactForm();
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-wrap">
+    <form onSubmit={handleSubmit} className="flex gap-y-2 flex-wrap">
       <div className="w-1/2 pr-1">
         <InputField
           id="fullName"

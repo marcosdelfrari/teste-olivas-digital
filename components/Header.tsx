@@ -16,7 +16,7 @@ function Header() {
         <p className="text-base sm:text-xl text-shadow-white my-[30px] text-[#7f7f7f]">
           {header.description}
         </p>
-        <button className="w-72 h-16 text-xl font-bold rounded-full text-white bg-primary">
+        <button className="sm:h-[64px] sm:w-[360px] h-[46px] w-[200px] text-base sm:text-xl font-bold rounded-full text-white bg-primary">
           Contato
         </button>
       </div>

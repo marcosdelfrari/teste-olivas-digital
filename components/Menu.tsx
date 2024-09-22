@@ -4,7 +4,7 @@ import Busca from "./Busca";
 import { useRouter } from "next/navigation";
 import { links } from "@/lib/data";
 import { IoIosSearch } from "react-icons/io";
-import { CiMenuFries } from "react-icons/ci";
+import { CgMenuRightAlt } from "react-icons/cg";
 
 function Menu() {
   const router = useRouter();
@@ -30,18 +30,21 @@ function Menu() {
 
   return (
     <div>
-      <div className="flex lg:hidden text-2xl">
-        <CiMenuFries onClick={toggleMenu} className="cursor-pointer" />
+      {/* Ícone de abrir menu no mobile */}
+      <div className="flex lg:hidden text-3xl">
+        <CgMenuRightAlt onClick={toggleMenu} className="cursor-pointer" />
       </div>
 
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out"
           onClick={closeMenu}
         ></div>
       )}
+
+      {/* Menu lateral no mobile */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white shadow-lg z-50 transition-transform transform ${
+        className={`fixed top-0 right-0 h-full bg-white shadow-lg z-50 transition-transform duration-1000 ease-in-out transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } w-[250px] lg:hidden`}
       >
@@ -61,6 +64,7 @@ function Menu() {
         </div>
       </div>
 
+      {/* Menu no desktop */}
       <div className="lg:flex hidden gap-2 items-center">
         <ul className="flex gap-2">
           {links.map((link, index) => (
@@ -72,6 +76,8 @@ function Menu() {
             </li>
           ))}
         </ul>
+
+        {/* Campo de busca */}
         <div className="relative flex items-center hover:text-secondary">
           <IoIosSearch
             onClick={toggleSearch}
@@ -89,6 +95,8 @@ function Menu() {
             <Busca onSearch={handleSearch} />
           </div>
         </div>
+
+        {/* Link de contato */}
         <Link
           href="/blog"
           className="hover:scale-105 h-[40px] text-white rounded-full py-2 px-4 bg-primary"
