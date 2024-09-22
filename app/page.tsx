@@ -4,6 +4,7 @@ import SpaceSection from "@/components/SpaceSection";
 import Performance from "@/components/Performance";
 import Contato from "@/components/Contato";
 import Blog from "@/components/Blog";
+import WhatsappFloat from "@/components/WhatsappFloat";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Blog />
       <SpaceSection />
       <Contato />
+      <WhatsappFloat />
       <SpaceSection />
     </div>
   );
