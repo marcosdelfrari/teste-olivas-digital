@@ -31,7 +31,6 @@ function BlogPage() {
       )}
       {error && <p>{error}</p>}
 
-      {/* Verifica se posts é um array antes de renderizar */}
       {Array.isArray(posts) && posts.length > 0 ? (
         <div className="flex my-5 flex-wrap">
           {posts.map((post) => (
@@ -45,7 +44,7 @@ function BlogPage() {
           ))}
         </div>
       ) : (
-        <p>Nenhum post encontrado.</p>
+        <p>Nenhum resultado encontrado</p>
       )}
     </div>
   );
