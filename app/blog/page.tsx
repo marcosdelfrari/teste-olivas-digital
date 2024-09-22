@@ -1,17 +1,16 @@
-// app/blog/page.tsx
 "use client";
 
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import useFetchPosts from "../../hooks/useFetchPosts";
-import PostCard from "@/components/PostCard"; // Importa o novo componente
+import PostCard from "@/components/PostCard";
 import Loading from "@/components/Loading";
 function BlogPage() {
   const searchParams = useSearchParams();
-  const keyword = searchParams.get("keyword") || ""; // Palavra-chave
-  const categoryId = Number(searchParams.get("category")) || 0; // ID da categoria
+  const keyword = searchParams.get("keyword") || "";
+  const categoryId = Number(searchParams.get("category")) || 0;
 
-  const { posts, loading, error } = useFetchPosts(keyword || categoryId); // Chama a função com base no tipo de busca
+  const { posts, loading, error } = useFetchPosts(keyword || categoryId);
 
   return (
     <div>

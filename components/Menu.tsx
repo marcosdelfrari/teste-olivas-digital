@@ -9,7 +9,7 @@ import { CiMenuFries } from "react-icons/ci";
 function Menu() {
   const router = useRouter();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado do menu lateral
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSearch = (query: string, type: string) => {
     const formattedQuery = encodeURIComponent(query);
@@ -30,20 +30,16 @@ function Menu() {
 
   return (
     <div>
-      {/* Ícone de Menu para mobile */}
       <div className="flex lg:hidden text-2xl">
         <CiMenuFries onClick={toggleMenu} className="cursor-pointer" />
       </div>
 
-      {/* Overlay que fecha o menu quando clicado */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
           onClick={closeMenu}
         ></div>
       )}
-
-      {/* Menu lateral para mobile */}
       <div
         className={`fixed top-0 right-0 h-full bg-white shadow-lg z-50 transition-transform transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -53,8 +49,8 @@ function Menu() {
           {links.map((link, index) => (
             <li
               key={index}
-              className="text-[#7f7f7f] text-lg hover:text-secondary"
-              onClick={closeMenu} // Fecha o menu ao clicar em uma opção
+              className="text-[#7f7f7f] text-xl hover:text-secondary"
+              onClick={closeMenu}
             >
               <Link href={link.hash}>{link.label}</Link>
             </li>
@@ -65,7 +61,6 @@ function Menu() {
         </div>
       </div>
 
-      {/* Menu para telas grandes */}
       <div className="lg:flex hidden gap-2 items-center">
         <ul className="flex gap-2">
           {links.map((link, index) => (

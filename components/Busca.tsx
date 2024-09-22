@@ -1,11 +1,10 @@
-// components/Busca.tsx
 "use client";
 
 import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 
 interface BuscaProps {
-  onSearch: (query: string, type: string) => void; // Aceita dois parâmetros
+  onSearch: (query: string, type: string) => void;
 }
 
 const Busca: React.FC<BuscaProps> = ({ onSearch }) => {

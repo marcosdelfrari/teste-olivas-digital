@@ -1,5 +1,4 @@
-"use client"; // Adicione esta linha no topo do arquivo
-
+"use client";
 import React from "react";
 import useContactForm from "@/hooks/useContactForm";
 import InputField from "@/components/Inputs/InputField";
@@ -14,7 +13,6 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-wrap">
       <div className="w-1/2 pr-1">
-        {" "}
         <InputField
           id="fullName"
           label="Nome Completo"
@@ -25,7 +23,6 @@ export default function ContactForm() {
         />
       </div>
       <div className="w-1/2 pl-1">
-        {" "}
         <InputField
           id="email"
           label="E-mail Corporativo"
@@ -47,7 +44,6 @@ export default function ContactForm() {
       </div>
 
       <div className="sm:w-1/2 w-full sm:pl-1">
-        {" "}
         <InputField
           id="companyRole"
           label="Qual a sua função na empresa?"

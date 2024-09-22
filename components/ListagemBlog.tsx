@@ -1,9 +1,8 @@
-"use client"; // Adicione esta linha no topo do arquivo
+"use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// Definindo a interface para os dados do post
 interface Post {
   id: number;
   title: {
@@ -21,15 +20,15 @@ interface Post {
 }
 
 const ListagemBlog = () => {
-  const [items, setItems] = useState<Post[]>([]); // Definindo o estado como um array de Post
+  const [items, setItems] = useState<Post[]>([]);
   const [totalGroups, setTotalGroups] = useState(0);
 
   useEffect(() => {
     axios
-      .get("https://www.olivas.digital/wp-json/wp/v2/posts?categories=373") // Limitando a resposta a 9 posts e usando _embed para imagens
+      .get("https://www.olivas.digital/wp-json/wp/v2/posts?categories=373")
       .then((response) => {
-        setItems(response.data); // Definindo o tipo de items corretamente
-        setTotalGroups(Math.ceil(response.data.length / 3)); // Calculando total de grupos (3 posts por grupo)
+        setItems(response.data);
+        setTotalGroups(Math.ceil(response.data.length / 3));
       })
       .catch((error) => {
         console.log("Erro ao obter dados da API", error);
@@ -37,7 +36,6 @@ const ListagemBlog = () => {
   }, []);
   return (
     <div className="overflow-x-auto">
-      {" "}
       {Array.from({ length: totalGroups }).map((_, groupIndex) => (
         <div key={groupIndex} className="flex flex-shrink-0 w-full">
           {items.slice(groupIndex * 3, groupIndex * 3 + 3).map((item) => (

@@ -5,9 +5,9 @@ import useResponsiveItems from "@/hooks/useResponsiveItems";
 import useCarousel from "@/hooks/useCarousel";
 import Loading from "./Loading";
 
-function CarrouselBlog() {
-  const { itemsPerGroup, postsPerPage } = useResponsiveItems(); // Usando ambos os valores do hook
-  const { posts, loading, error } = useFetchPosts(373, postsPerPage); // Passando o valor de postsPerPage dinamicamente
+function CarouselBlog() {
+  const { itemsPerGroup, postsPerPage } = useResponsiveItems();
+  const { posts, loading, error } = useFetchPosts(373, postsPerPage);
   const totalGroups = Math.ceil(posts.length / itemsPerGroup);
   const { activeIndex, handleDotClick } = useCarousel(totalGroups);
 
@@ -20,7 +20,7 @@ function CarrouselBlog() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="mx-5">
+    <section id="blog" className="mx-5">
       <div className="relative overflow-hidden">
         <div
           className="flex transition-transform duration-300 ease-in-out"
@@ -83,8 +83,8 @@ function CarrouselBlog() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
-export default CarrouselBlog;
+export default CarouselBlog;

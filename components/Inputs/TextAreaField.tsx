@@ -6,7 +6,7 @@ interface TextAreaFieldProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   error?: string;
-  required?: boolean; // Adicionando a prop required
+  required?: boolean;
 }
 
 const TextAreaField: React.FC<TextAreaFieldProps> = ({
@@ -15,22 +15,21 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
   value,
   onChange,
   error,
-  required, // Recebendo a prop
+  required,
 }) => (
   <div>
     <label
       htmlFor={id}
       className={`block text-base font-bold ${
         error ? "text-red-500" : "text-[#5d5d5d]"
-      }`} // Mudando a cor do label com base no erro
+      }`}
     >
       {label}
       {required && (
         <span className={`ml-1 ${error ? "text-red-500" : "text-primary"}`}>
           *
         </span>
-      )}{" "}
-      {/* Asterisco */}
+      )}
     </label>
     <textarea
       id={id}

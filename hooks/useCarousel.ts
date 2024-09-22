@@ -6,7 +6,7 @@ const useCarousel = (totalGroups: number) => {
   const handleDotClick = useCallback(
     (index: number) => {
       if (index >= totalGroups) {
-        setActiveIndex(0); // Reinicia os dots
+        setActiveIndex(0);
       } else {
         setActiveIndex(index);
       }

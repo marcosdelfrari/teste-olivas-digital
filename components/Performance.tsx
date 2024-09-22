@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Performance() {
   return (
-    <div>
+    <section id="performance">
       <div className="mx-5">
         <div className="mb-5 sm:my-10 flex justify-center">
           <h1 className="text-3xl sm:text-4xl font-semibold text-secondary weight-600">
@@ -12,7 +12,6 @@ function Performance() {
           </h1>
         </div>
         <div className="relative  flex items-center justify-between overflow-hidden">
-          {/* Exiba a imagem de SEO */}
           <div className="hidden md:flex md:relative lg:w-full max-w-[306px]">
             <Image
               src={performance.perfoImg}
@@ -53,7 +52,7 @@ function Performance() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

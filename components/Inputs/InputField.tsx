@@ -5,9 +5,9 @@ interface InputFieldProps {
   label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  error?: string; // A mensagem de erro será em português
+  error?: string;
   type?: string;
-  required?: boolean; // Nova propriedade
+  required?: boolean;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -17,7 +17,7 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   error,
   type = "text",
-  required = false, // Valor padrão
+  required = false,
 }) => (
   <div>
     <label
@@ -31,8 +31,7 @@ const InputField: React.FC<InputFieldProps> = ({
         <span className={`ml-1 ${error ? "text-red-500" : "text-primary"}`}>
           *
         </span>
-      )}{" "}
-      {/* Asterisco */}
+      )}
     </label>
     <input
       id={id}
@@ -44,8 +43,7 @@ const InputField: React.FC<InputFieldProps> = ({
         error ? "border-red-500" : "border-primary"
       } focus:border-secondary focus:ring-0 outline-none`}
     />
-    {error && <p className="text-red-500 text-sm">{error}</p>}{" "}
-    {/* Mensagem de erro */}
+    {error && <p className="text-red-500 text-sm">{error}</p>}
   </div>
 );
 

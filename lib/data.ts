@@ -25,7 +25,7 @@ export const id = {
 };
 
 export const links = [
-  { label: "Sobre o teste", hash: "#teste" },
+  { label: "Sobre o teste", hash: "#sobre" },
   { label: "SEO", hash: "#seo" },
   { label: "Performance", hash: "#performance" },
   { label: "Blog", hash: "#blog" },

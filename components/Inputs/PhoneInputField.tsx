@@ -8,7 +8,7 @@ interface PhoneInputFieldProps {
   ) => void;
   phoneNumber: string;
   error?: string;
-  required?: boolean; // Adicionando a prop required
+  required?: boolean;
 }
 
 const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
@@ -16,7 +16,7 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
   onChange,
   phoneNumber,
   error,
-  required, // Recebendo a prop
+  required,
 }) => {
   return (
     <div className="sm:pr-1 w-full ">
@@ -31,8 +31,7 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
           <span className={`ml-1 ${error ? "text-red-500" : "text-primary"}`}>
             *
           </span>
-        )}{" "}
-        {/* Asterisco */}
+        )}
       </label>
       <div
         className={`mt-1 w-full flex rounded-[8px] border h-[40px] sm:h-[56px] ${

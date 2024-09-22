@@ -10,7 +10,6 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({ imageUrl, title, link }) => {
   return (
     <a target="_blank" href={link}>
-      {" "}
       <div className="flex-1 custom-shadow sm:p-7 p-4 w-90  m-2 rounded-3xl">
         <div className="flex flex-col items-center justify-center">
           {imageUrl && (

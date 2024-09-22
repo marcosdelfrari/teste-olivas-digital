@@ -4,7 +4,10 @@ import Image from "next/image";
 
 function Seo() {
   return (
-    <div className="mx-5 2xl:mx-0 custom-shadow rounded-[32px] p-10 md:px-5 ">
+    <section
+      id="seo"
+      className="mx-5 2xl:mx-0 custom-shadow rounded-[32px] p-10 md:px-5 "
+    >
       <div className="mb-5 sm:my-10 flex justify-center">
         <h1
           className="font-medium flex flex-col md:flex-row  text-center gap-1 sm:gap-3 text-4xl sm:text-5xl"
@@ -40,7 +43,6 @@ function Seo() {
           </ul>
         </div>
 
-        {/* Exiba a imagem de SEO */}
         <div className="hidden md:flex md:relative lg:w-full max-w-[383px]">
           <Image
             src={seo.seoImg}
@@ -51,7 +53,7 @@ function Seo() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

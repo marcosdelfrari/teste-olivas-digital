@@ -1,10 +1,9 @@
-import CarrouselBlog from "@/components/CarrouselBlog";
 import Header from "@/components/Header";
-import Form from "@/components/Form";
 import Seo from "@/components/Seo";
 import SpaceSection from "@/components/SpaceSection";
 import Performance from "@/components/Performance";
 import Contato from "@/components/Contato";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
       <SpaceSection />
       <Performance />
       <SpaceSection />
-      <CarrouselBlog />
+      <Blog />
       <SpaceSection />
       <Contato />
       <SpaceSection />

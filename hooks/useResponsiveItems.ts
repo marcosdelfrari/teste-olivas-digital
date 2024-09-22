@@ -28,8 +28,8 @@ const useResponsiveItems = () => {
   }, []);
 
   return {
-    itemsPerGroup: itemsPerGroup !== null ? itemsPerGroup : 3, // fallback para 3
-    postsPerPage: postsPerPage !== null ? postsPerPage : 8, // fallback para 8
+    itemsPerGroup: itemsPerGroup !== null ? itemsPerGroup : 3,
+    postsPerPage: postsPerPage !== null ? postsPerPage : 8,
   };
 };
 

@@ -4,12 +4,13 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="relative pt-16 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden">
-      {" "}
-      {/* Adicione overflow-hidden aqui */}
+    <header
+      id="sobre"
+      className="relative pt-44 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden"
+    >
       <div className="w-3/4 z-10">
         <h1
-          className="font-medium flex flex-col text-4xl sm:text-5xl" // Corrigi weight-500 para font-medium
+          className="font-medium flex flex-col text-4xl sm:text-5xl"
           dangerouslySetInnerHTML={{ __html: header.title }}
         />
         <p className="text-base sm:text-xl text-shadow-white my-[30px] text-[#7f7f7f]">
@@ -20,8 +21,6 @@ function Header() {
         </button>
       </div>
       <div className="absolute md:relative -right-72 md:right-0 w-full max-w-[528px]">
-        {" "}
-        {/* Use right negativo */}
         <Image
           src={header.img}
           alt="Logo"
