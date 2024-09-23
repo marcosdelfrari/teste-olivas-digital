@@ -1,6 +1,6 @@
 const logo = "/logo.png";
 const headerImg = "/headerimg.png";
-const seoImg = "/seoImg.png";
+const seoImg = "/seo.png";
 const perfoImg = "/perfo.png";
 const velocidadeIcon = "/velocidade.svg";
 const otimizacaoIcon = "/otimizacao.svg";
