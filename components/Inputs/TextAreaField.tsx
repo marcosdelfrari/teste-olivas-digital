@@ -41,7 +41,9 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
         error ? "border-red-500" : "border-primary"
       } focus:border-secondary focus:ring-0 outline-none`}
     />
-    {error && <p className="text-red-500 text-sm">{error}</p>}
+    {error && (
+      <p className="text-red-500 text-sm">A menssagem é obrigatório.</p>
+    )}
   </div>
 );
 

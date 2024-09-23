@@ -32,21 +32,29 @@ Este é um projeto desenvolvido em [Next.js](https://nextjs.org/) com foco em de
 
 2. Instale as dependências:
 
+```bash
    npm install
+```
 
-   # ou
+# ou
 
+```bash
    yarn install
+```
 
 ## Execução
 
 Inicie o servidor de desenvolvimento:
 
+```bash
 npm run dev
+```
 
 # ou
 
+```bash
 yarn dev
+```
 
 Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
@@ -72,14 +80,20 @@ A aplicação foi desenvolvida para ser totalmente responsiva, funcionando bem e
 1. Clone o repositório.
 2. Crie uma branch para sua feature:
 
+```bash
    git checkout -b minha-feature
+```
 
 3. Faça suas alterações e commit:
 
+```bash
    git commit -m "Adiciona nova funcionalidade"
+```
 
 4. Envie para o repositório remoto:
 
+```bash
    git push origin minha-feature
+```
 
 5. Abra um Pull Request.

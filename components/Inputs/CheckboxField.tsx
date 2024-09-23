@@ -32,7 +32,7 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
         {label}
       </label>
     </div>
-    {error && <p className="text-red-500 text-sm">{error}</p>}
+    {error && <p className="text-red-500 text-sm">É necessário confirmar.</p>}
   </div>
 );
 

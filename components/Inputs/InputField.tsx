@@ -43,7 +43,7 @@ const InputField: React.FC<InputFieldProps> = ({
         error ? "border-red-500" : "border-primary"
       } focus:border-secondary focus:ring-0 outline-none`}
     />
-    {error && <p className="text-red-500 text-sm">{error}</p>}
+    {error && <p className="text-red-500 text-sm">Verifique as informações.</p>}
   </div>
 );
 
