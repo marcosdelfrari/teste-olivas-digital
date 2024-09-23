@@ -16,7 +16,7 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
   error,
 }) => (
   <div className="py-4">
-    <div className="flex items-center space-x-2">
+    <div className="flex">
       <input
         id={id}
         name={id}
@@ -28,7 +28,7 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({
         }`}
       />
 
-      <label htmlFor={id} className="text-sm text-gray-700">
+      <label htmlFor={id} className="sm:text-lg pl-4 text-sm text-[#5d5d5d]">
         {label}
       </label>
     </div>

@@ -6,6 +6,7 @@ import CheckboxField from "@/components/Inputs/CheckboxField";
 import TextAreaField from "@/components/Inputs/TextAreaField";
 import SubmitButton from "@/components/Inputs/SubmitButton";
 import PhoneInputField from "./Inputs/PhoneInputField";
+import SelectField from "./Inputs/SelectField";
 
 export default function ContactForm() {
   const { formData, errors, handleChange, handleSubmit } = useContactForm();
@@ -44,11 +45,17 @@ export default function ContactForm() {
       </div>
 
       <div className="sm:w-1/2 w-full sm:pl-1">
-        <InputField
+        <SelectField
           id="companyRole"
           label="Qual a sua função na empresa?"
           value={formData.companyRole}
           onChange={handleChange}
+          options={[
+            { value: "", label: "Selecione uma opção" },
+            { value: "developer", label: "Desenvolvedor" },
+            { value: "designer", label: "Designer" },
+            { value: "manager", label: "Gerente" },
+          ]}
           error={errors.companyRole}
           required={true}
         />
@@ -64,14 +71,16 @@ export default function ContactForm() {
         />
       </div>
 
-      <CheckboxField
-        id="confirmed"
-        label="Ao informar meus dados, eu concordo com a Política de Privacidade e concordo em receber comunicações."
-        checked={formData.confirmed}
-        onChange={handleChange}
-        error={errors.confirmed}
-      />
-      <div className=" m-auto">
+      <div className="w-full ">
+        <CheckboxField
+          id="confirmed"
+          label="Ao informar meus dados, eu concordo com a Política de Privacidade e concordo em receber comunicações."
+          checked={formData.confirmed}
+          onChange={handleChange}
+          error={errors.confirmed}
+        />
+      </div>
+      <div className="m-auto">
         <SubmitButton>Receber atendimento</SubmitButton>
       </div>
     </form>

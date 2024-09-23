@@ -13,8 +13,8 @@ function Navbar() {
     itemsPerGroup === 1 ? 190 : itemsPerGroup === 2 ? 200 : 270;
 
   return (
-    <nav className="z-20 fixed bg-white w-full sm:relative text-primary">
-      <div className="flex px-5 2xl:p-0 h-[106px] justify-between items-center">
+    <nav className="z-20 max-w-[1254px] mx-auto fixed bg-white w-full sm:relative text-primary">
+      <div className="flex px-5 xl:p-0 h-[106px] justify-between items-center">
         <div>
           <a href="/">
             <Image

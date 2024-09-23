@@ -70,7 +70,7 @@ function Menu() {
           {links.map((link, index) => (
             <li
               key={index}
-              className="cursor-pointer 2xl:text-xl text-[#7f7f7f] hover:scale-105"
+              className="cursor-pointer xl:text-xl text-[#7f7f7f] hover:scale-105"
             >
               <Link href={link.hash}>{link.label}</Link>
             </li>

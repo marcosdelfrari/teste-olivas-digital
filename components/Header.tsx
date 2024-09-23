@@ -6,14 +6,14 @@ function Header() {
   return (
     <header
       id="sobre"
-      className="relative pt-44 sm:pt-0 px-10 md:px-5 2xl:p-0 flex items-center justify-between overflow-hidden"
+      className="relative pt-44 sm:pt-0 px-10 md:px-5 xl:p-0 flex items-center justify-between overflow-hidden"
     >
       <div className="w-3/4 z-10">
         <h1
           className="font-medium flex flex-col text-4xl sm:text-5xl"
           dangerouslySetInnerHTML={{ __html: header.title }}
         />
-        <p className="text-base sm:text-xl text-shadow-white my-[30px] text-[#7f7f7f]">
+        <p className="text-base sm:text-xl text-shadow-white my-[30px] sm:max-w-[671px] text-[#7f7f7f]">
           {header.description}
         </p>
         <button className="sm:h-[64px] sm:w-[360px] h-[46px] w-[200px] text-base sm:text-xl font-bold rounded-full text-white bg-primary">

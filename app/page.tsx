@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-[1254px] mx-auto">
       <Head>
         <meta property="og:title" content="Título Específico da Página" />
         <meta
@@ -29,9 +29,9 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <SpaceSection />
+
       <Seo />
-      <SpaceSection />
+
       <Performance />
       <SpaceSection />
       <Blog />

@@ -22,7 +22,7 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
     <div className="sm:pr-1 w-full ">
       <label
         htmlFor="phoneNumber"
-        className={`block text-base font-bold ${
+        className={`block text-base font-extrabold ${
           error ? "text-red-500" : "text-[#5d5d5d]"
         }`}
       >
