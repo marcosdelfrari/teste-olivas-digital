@@ -31,7 +31,6 @@ function Menu() {
 
   return (
     <div>
-      {/* Ícone de abrir menu no mobile */}
       <div className="flex lg:hidden text-3xl">
         <CgMenuRightAlt onClick={toggleMenu} className="cursor-pointer" />
       </div>
@@ -43,7 +42,6 @@ function Menu() {
         ></div>
       )}
 
-      {/* Menu lateral no mobile */}
       <div
         className={`fixed top-0 right-0 h-full bg-white shadow-lg z-50 transition-transform duration-1000 ease-in-out transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -65,7 +63,6 @@ function Menu() {
         </div>
       </div>
 
-      {/* Menu no desktop */}
       <div className="lg:flex hidden gap-2 lg:gap-[32px] items-center">
         <ul className="flex lg:gap-[32px]">
           {links.map((link, index) => (
@@ -78,7 +75,6 @@ function Menu() {
           ))}
         </ul>
 
-        {/* Campo de busca */}
         <div className="relative text-xl flex items-center hover:text-secondary">
           <IoIosSearch
             onClick={toggleSearch}
@@ -97,7 +93,6 @@ function Menu() {
           </div>
         </div>
 
-        {/* Link de contato */}
         <Link
           href="#contato"
           className="hover:scale-105 h-[40px] text-white rounded-full py-2 px-4 bg-primary"
