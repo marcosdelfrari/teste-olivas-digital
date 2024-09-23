@@ -26,9 +26,13 @@ Este é um projeto desenvolvido em [Next.js](https://nextjs.org/) com foco em de
 
 1. Clone o repositório:
 
+```bash
    git clone https://github.com/marcosdelfrari/teste-olivas-digital.git
+```
 
+```bash
    cd teste-olivas-digital
+```
 
 2. Instale as dependências:
 
