@@ -18,10 +18,10 @@ function Contato() {
         <div className="sm:flex sm:flex-col sm:gap-y-[24px]">
           {" "}
           <h1
-            className="font-medium flex flex-col sm:flex-row sm:gap-4 sm:justify-center text-4xl sm:text-5xl"
+            className="font-medium flex flex-col lg:flex-row sm:gap-4 sm:justify-center text-4xl sm:text-5xl"
             dangerouslySetInnerHTML={{ __html: contato.title }}
           />
-          <p className="mt-4 sm:text-center text-[#5D5D5D] text-xl">
+          <p className="mt-4 lg:text-center text-[#5D5D5D] text-xl">
             {contato.description}
           </p>
         </div>{" "}

@@ -26,6 +26,8 @@ function Performance() {
             scale: scaleProgress,
             opacity: opacityProgress,
           }}
+          initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
+          animate={{ opacity: 1 }}
         >
           <div className="hidden md:flex md:w-[440px] md:relative md:justify-center">
             <Image
@@ -43,27 +45,36 @@ function Performance() {
               scale: scaleProgress,
               opacity: opacityProgress,
             }}
+            initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
+            animate={{ opacity: 1 }}
           >
-            <div className=" flex flex-col gap-y-[24px] w-full">
-              {" "}
+            <div className="flex flex-col gap-y-[24px] w-full">
               <div
                 className="font-semibold flex text-[#5D5D5D] leading-[46px] flex-wrap gap-x-1 sm:gap-x-3 text-2xl sm:text-[38px]"
                 dangerouslySetInnerHTML={{ __html: performance.subtitle }}
               />
-              <p className="text-base my-5 md:my-0  sm:text-xl text-shadow-white text-[#7f7f7f]">
+              <p className="text-base my-5 md:my-0 sm:text-xl text-shadow-white text-[#7f7f7f]">
                 {performance.description}
               </p>
             </div>
           </motion.div>
         </motion.div>
-        <div>
-          <ul className="sm:flex sm:gap-x-[88px] justify-center flex-wrap">
+        <motion.div
+          ref={ref}
+          style={{
+            scale: scaleProgress,
+            opacity: opacityProgress,
+          }}
+          initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
+          animate={{ opacity: 1 }}
+        >
+          <ul className="sm:flex sm:gap-x-[88px] sm:justify-center flex-wrap">
             {performance.tags.map((tag, index) => (
               <li
                 key={index}
                 className={`flex-1 sm:gap-y-[9px] w-full h-full ${
                   index === 1 ? "sm:w-[117px] sm:max-w-[117px]" : "sm:w-[200px]"
-                } flex sm:flex-col sm:text-center justify-center items-center md:text-xl text-shadow-white mt-[15px] sm:mt-[30px] text-[#7f7f7f]`}
+                } flex sm:flex-col sm:text-center sm:justify-center items-center md:text-xl text-shadow-white mt-[15px] sm:mt-[30px] text-[#7f7f7f]`}
               >
                 {tag.icon && (
                   <Image
@@ -80,7 +91,7 @@ function Performance() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

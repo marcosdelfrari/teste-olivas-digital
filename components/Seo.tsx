@@ -18,10 +18,12 @@ function Seo() {
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       id="seo"
-      className="sm:h-[812px] flex items-center justify-center"
+      className="sm:h-[812px] lg:m-0 mb-28 flex items-center justify-center"
     >
-      <div className="mx-5 sm:mx-0 custom-shadow rounded-[32px] p-[37px] md:px-5 ">
+      <div className="mx-5 lg:mx-0 custom-shadow rounded-[32px] p-[37px] md:px-5 ">
         <div className="mb-5 sm:my-10 flex justify-center">
           <h1
             className="font-medium flex flex-col md:flex-row text-center gap-1 sm:gap-3 text-4xl sm:text-5xl"
