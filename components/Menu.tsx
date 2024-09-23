@@ -14,6 +14,7 @@ function Menu() {
   const handleSearch = (query: string, type: string) => {
     const formattedQuery = encodeURIComponent(query);
     router.push(`/blog?${type}=${formattedQuery}`);
+    closeMenu(); // Fecha o menu após a pesquisa
   };
 
   const toggleSearch = () => {
@@ -60,7 +61,7 @@ function Menu() {
           ))}
         </ul>
         <div className="p-4 m-auto">
-          <Busca onSearch={handleSearch} />
+          <Busca onSearch={handleSearch} closeMenu={closeMenu} />
         </div>
       </div>
 
@@ -81,7 +82,7 @@ function Menu() {
         <div className="relative text-xl flex items-center hover:text-secondary">
           <IoIosSearch
             onClick={toggleSearch}
-            className={`cursor-pointer transition-all hover:scale-105  duration-300 ease-in-out ${
+            className={`cursor-pointer transition-all hover:scale-105 duration-300 ease-in-out ${
               isSearchVisible ? "hidden" : "block"
             }`}
           />
@@ -92,7 +93,7 @@ function Menu() {
                 : "max-w-0 opacity-0"
             } overflow-hidden`}
           >
-            <Busca onSearch={handleSearch} />
+            <Busca onSearch={handleSearch} closeMenu={closeMenu} />
           </div>
         </div>
 

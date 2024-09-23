@@ -18,6 +18,14 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
   error,
   required,
 }) => {
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    const numericValue = value.replace(/[^0-9]/g, "").slice(0, 11);
+
+    onChange({ ...e, target: { ...e.target, value: numericValue } });
+  };
+
   return (
     <div className="sm:pr-1 w-full ">
       <label
@@ -44,8 +52,9 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({
           name="phoneNumber"
           type="tel"
           value={phoneNumber}
-          onChange={onChange}
+          onChange={handlePhoneChange}
           className={`mt-1 block w-full rounded-r-[8px] outline-none`}
+          maxLength={11}
         />
       </div>
       {error && <p className="text-red-500 text-sm">{error}</p>}

@@ -2,15 +2,8 @@
 import { performance } from "@/lib/data";
 import React from "react";
 import Image from "next/image";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
-import { motion } from "framer-motion";
 
 function Performance() {
-  const { ref, scaleProgress, opacityProgress } = useScrollAnimation(
-    "0 1",
-    "1 1"
-  );
-
   return (
     <section id="performance">
       <div className="mx-5 sm:flex sm:items-center sm:justify-center sm:flex-col sm:gap-y-[64px] sm:mt-[16px] sm:mb-[64px]">
@@ -19,16 +12,7 @@ function Performance() {
             {performance.title}
           </h1>
         </div>
-        <motion.div
-          className="relative max-w-[1043px] sm:gap-x-[80px] flex items-center justify-between overflow-hidden"
-          ref={ref}
-          style={{
-            scale: scaleProgress,
-            opacity: opacityProgress,
-          }}
-          initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
-          animate={{ opacity: 1 }}
-        >
+        <div className="relative max-w-[1043px] sm:gap-x-[80px] flex items-center justify-between overflow-hidden">
           <div className="hidden md:flex md:w-[440px] md:relative md:justify-center">
             <Image
               src={performance.perfoImg}
@@ -38,16 +22,7 @@ function Performance() {
               height="327"
             />
           </div>
-          <motion.div
-            className="md:w-3/4 z-10"
-            ref={ref}
-            style={{
-              scale: scaleProgress,
-              opacity: opacityProgress,
-            }}
-            initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
-            animate={{ opacity: 1 }}
-          >
+          <div className="md:w-3/4 z-10">
             <div className="flex flex-col gap-y-[24px] w-full">
               <div
                 className="font-semibold flex text-[#5D5D5D] leading-[46px] flex-wrap gap-x-1 sm:gap-x-3 text-2xl sm:text-[38px]"
@@ -57,17 +32,10 @@ function Performance() {
                 {performance.description}
               </p>
             </div>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          ref={ref}
-          style={{
-            scale: scaleProgress,
-            opacity: opacityProgress,
-          }}
-          initial={{ opacity: 0.8 }} // Inicia com 0.8 de opacidade
-          animate={{ opacity: 1 }}
-        >
+          </div>
+        </div>
+
+        <div>
           <ul className="sm:flex sm:gap-x-[88px] sm:justify-center flex-wrap">
             {performance.tags.map((tag, index) => (
               <li
@@ -91,7 +59,7 @@ function Performance() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

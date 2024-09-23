@@ -6,14 +6,14 @@ function Footer() {
   return (
     <footer>
       <div className="sm:h-227 px-5 py-[30px] flex gap-2 flex-col sm:flex-row bg-[#E6E6E6] sm:justify-center sm:items-center">
-        <div className="max-w-[800px] flex sm:gap-x-[56px]">
+        <div className="max-w-[800px] flex flex-col lg:flex-row gap-y-5 lg:gap-0 sm:gap-x-[56px]">
           <div className="max-w-[417px]">
             <Image src={id.logoSvg} alt="Logo" width="180" height="42" />
             <p className="text-[#7F7F7F] pt-3 text-sm">{footer.info}</p>
           </div>
           <div className="flex flex-col gap-y-[13px]">
             <h2 className="text-[#5D5D5D] text-xl font-bold">Fale conosco</h2>
-            <div className="flex sm:gap-x-[35px]">
+            <div className="flex gap-x-[35px]">
               <div>
                 <p className="text-[#7F7F7F] text-base font-semibold">
                   Atendimento:
