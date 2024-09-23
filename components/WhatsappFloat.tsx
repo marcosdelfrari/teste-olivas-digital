@@ -8,6 +8,7 @@ function WhatsappFloat() {
         <a
           className="w-full h-full flex items-center justify-center"
           href="https://wa.me/5599999999999"
+          target="_blank"
         >
           <FaPhoneAlt className="text-white text-xl transition-opacity duration-1000 ease-in-out group-hover:opacity-0 absolute" />
 

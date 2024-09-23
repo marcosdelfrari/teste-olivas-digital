@@ -4,7 +4,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
+    <footer>
       <div className="sm:h-227 px-5 py-[30px] flex gap-2 flex-col sm:flex-row bg-[#E6E6E6] sm:justify-center sm:items-center">
         <div className="max-w-[800px] flex sm:gap-x-[56px]">
           <div className="max-w-[417px]">
@@ -51,7 +51,7 @@ function Footer() {
       <div className="bg-[#B1B1B1] flex items-center w-full justify-center text-center h-[46px] text-white">
         © 2014-2024 - Olivas Digital
       </div>
-    </div>
+    </footer>
   );
 }
 

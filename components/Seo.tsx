@@ -1,17 +1,30 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { seo } from "@/lib/data";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 function Seo() {
+  const { ref, scaleProgress, opacityProgress } = useScrollAnimation(
+    "0 1",
+    "1.05 1"
+  );
+
   return (
-    <section
+    <motion.section
+      ref={ref}
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
       id="seo"
-      className="sm:h-[812px] flex items-center justify-center "
+      className="sm:h-[812px] flex items-center justify-center"
     >
-      <div className="mx-5 sm:mx-0  custom-shadow rounded-[32px] p-[37px] md:px-5 ">
+      <div className="mx-5 sm:mx-0 custom-shadow rounded-[32px] p-[37px] md:px-5 ">
         <div className="mb-5 sm:my-10 flex justify-center">
           <h1
-            className="font-medium flex flex-col md:flex-row  text-center gap-1 sm:gap-3 text-4xl sm:text-5xl"
+            className="font-medium flex flex-col md:flex-row text-center gap-1 sm:gap-3 text-4xl sm:text-5xl"
             dangerouslySetInnerHTML={{ __html: seo.title }}
           />
         </div>
@@ -48,14 +61,14 @@ function Seo() {
             <Image
               src={seo.seoImg}
               alt={seo.title}
-              className="max-w-full h-auto "
+              className="max-w-full h-auto"
               width="800"
               height="400"
             />
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

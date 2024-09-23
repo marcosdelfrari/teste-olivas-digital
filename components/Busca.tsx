@@ -15,12 +15,19 @@ const Busca: React.FC<BuscaProps> = ({ onSearch }) => {
     onSearch(query, searchType);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="flex items-center relative">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown} // Adiciona o manipulador de eventos
         placeholder="Digite sua busca"
         className="border h-[40px] border-primary outline-none focus-visible:border-secondary sm:max-w-40 text-sm px-2 py-1 rounded-full w-full"
       />
@@ -28,7 +35,7 @@ const Busca: React.FC<BuscaProps> = ({ onSearch }) => {
         className="absolute right-3 hover:font-secondary"
         onClick={handleSearch}
       >
-        <IoIosSearch className="cursor-pointer " />
+        <IoIosSearch className="cursor-pointer" />
       </button>
     </div>
   );

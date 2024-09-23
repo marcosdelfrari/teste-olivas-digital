@@ -1,8 +1,16 @@
+"use client";
 import { performance } from "@/lib/data";
 import React from "react";
 import Image from "next/image";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 function Performance() {
+  const { ref, scaleProgress, opacityProgress } = useScrollAnimation(
+    "0 1",
+    "1 1"
+  );
+
   return (
     <section id="performance">
       <div className="mx-5 sm:flex sm:items-center sm:justify-center sm:flex-col sm:gap-y-[64px] sm:mt-[16px] sm:mb-[64px]">
@@ -11,7 +19,14 @@ function Performance() {
             {performance.title}
           </h1>
         </div>
-        <div className="relative max-w-[1043px] sm:gap-x-[80px] flex items-center justify-between overflow-hidden">
+        <motion.div
+          className="relative max-w-[1043px] sm:gap-x-[80px] flex items-center justify-between overflow-hidden"
+          ref={ref}
+          style={{
+            scale: scaleProgress,
+            opacity: opacityProgress,
+          }}
+        >
           <div className="hidden md:flex md:w-[440px] md:relative md:justify-center">
             <Image
               src={performance.perfoImg}
@@ -21,7 +36,14 @@ function Performance() {
               height="327"
             />
           </div>
-          <div className="md:w-3/4 z-10">
+          <motion.div
+            className="md:w-3/4 z-10"
+            ref={ref}
+            style={{
+              scale: scaleProgress,
+              opacity: opacityProgress,
+            }}
+          >
             <div className=" flex flex-col gap-y-[24px] w-full">
               {" "}
               <div
@@ -32,8 +54,8 @@ function Performance() {
                 {performance.description}
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div>
           <ul className="sm:flex sm:gap-x-[88px] justify-center flex-wrap">
             {performance.tags.map((tag, index) => (

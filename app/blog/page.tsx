@@ -13,7 +13,7 @@ function BlogPage() {
   const { posts, loading, error } = useFetchPosts(keyword || categoryId);
 
   return (
-    <div className="pt-28 mx-5 sm:m-0">
+    <div className="pt-28 px-10 max-w-[1254px] mx-auto ">
       <h1 className="text-3xl sm:text-4xl font-semibold text-secondary weight-600">
         Resultados da Busca
       </h1>

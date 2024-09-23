@@ -65,8 +65,8 @@ function Menu() {
       </div>
 
       {/* Menu no desktop */}
-      <div className="lg:flex hidden gap-2 items-center">
-        <ul className="flex gap-2">
+      <div className="lg:flex hidden gap-2 lg:gap-[32px] items-center">
+        <ul className="flex lg:gap-[32px]">
           {links.map((link, index) => (
             <li
               key={index}
@@ -78,7 +78,7 @@ function Menu() {
         </ul>
 
         {/* Campo de busca */}
-        <div className="relative flex items-center hover:text-secondary">
+        <div className="relative text-xl flex items-center hover:text-secondary">
           <IoIosSearch
             onClick={toggleSearch}
             className={`cursor-pointer transition-all hover:scale-105  duration-300 ease-in-out ${
@@ -98,7 +98,7 @@ function Menu() {
 
         {/* Link de contato */}
         <Link
-          href="/blog"
+          href="#contato"
           className="hover:scale-105 h-[40px] text-white rounded-full py-2 px-4 bg-primary"
         >
           Contato

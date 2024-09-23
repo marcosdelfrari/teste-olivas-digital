@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import { header } from "@/lib/data";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 function Header() {
   return (
@@ -8,7 +11,11 @@ function Header() {
       id="sobre"
       className="relative pt-44 sm:pt-0 px-10 md:px-5 xl:p-0 flex items-center justify-between overflow-hidden"
     >
-      <div className="w-3/4 z-10">
+      <motion.div
+        className="w-3/4 z-10"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+      >
         <h1
           className="font-medium flex flex-col text-4xl sm:text-5xl"
           dangerouslySetInnerHTML={{ __html: header.title }}
@@ -16,11 +23,17 @@ function Header() {
         <p className="text-base sm:text-xl text-shadow-white my-[30px] sm:max-w-[671px] text-[#7f7f7f]">
           {header.description}
         </p>
-        <button className="sm:h-[64px] sm:w-[360px] h-[46px] w-[200px] text-base sm:text-xl font-bold rounded-full text-white bg-primary">
-          Contato
-        </button>
-      </div>
-      <div className="absolute md:relative -right-72 md:right-0 w-full max-w-[528px]">
+        <Link href="#contato" className="absolute hidden">
+          <button className="sm:h-[64px] sm:w-[360px] h-[46px] w-[200px] text-base sm:text-xl font-bold rounded-full text-white bg-primary hover:bg-secondary">
+            Contato
+          </button>{" "}
+        </Link>
+      </motion.div>
+      <motion.div
+        className="absolute md:relative -right-72 md:right-0 w-full max-w-[528px]"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+      >
         <Image
           src={header.img}
           alt="Logo"
@@ -28,7 +41,7 @@ function Header() {
           height="530"
           quality="100"
         />
-      </div>
+      </motion.div>
     </header>
   );
 }
