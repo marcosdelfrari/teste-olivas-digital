@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Desafio Olivas Digital
 
 Este é um projeto desenvolvido em [Next.js](https://nextjs.org/) com foco em desenvolver uma pequena aplicação em Next.js que demonstre habilidades com React, gestão de estado e chamadas de API.
 .
